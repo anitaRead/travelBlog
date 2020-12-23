@@ -1,0 +1,29 @@
+<%- include("partials/header"); -%>
+
+
+    <section class="landing-img">
+        <div class="title-box">
+            <h1>Joined at the trip</h1>
+            <a href="#home-posts" class="btn"><i class="far fa-arrow-alt-circle-down fa-3x"></i></a>
+        </div>
+    </section>
+
+
+    <div id="home-posts">
+        <% posts.forEach(function(post){ %>
+            <a href="/posts/<%=post._id%>"></a>
+                <div class="post-box">
+                    <a href="/posts/<%=post._id%>">
+                    <h1 class="post-title">
+                        <%= post.title %>
+                    </h1>
+                    <p class="post-content">
+                        <%= post.content.substring(0, 50) + "..." %>
+                    </p>
+                    </a>
+                </div>
+            
+            <% }); %>
+    </div>
+
+    <%- include("partials/footer"); -%>
