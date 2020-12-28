@@ -4,11 +4,17 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Josefine Slab";
 }
 
-p, a {
+p,
+a {
   font-family: "Montserrat";
 }
 
@@ -26,7 +32,7 @@ p, a {
   border-bottom: 1px solid #87ceeb;
 }
 
-.leftnav {
+.left-nav {
   flex-grow: 1;
 }
 
@@ -40,6 +46,10 @@ p, a {
 
 .navbar a:hover {
   color: #d3d3d3;
+}
+
+.nav-toggle {
+  display: none;
 }
 
 .landing-img h1 {
@@ -92,7 +102,6 @@ p, a {
   text-decoration: none;
 }
 
-
 .post-title {
   text-transform: uppercase;
   padding-top: 5%;
@@ -114,7 +123,6 @@ p, a {
 #contact-section {
   margin-top: 7.5%;
 }
-
 
 /* Footer styles */
 
@@ -140,8 +148,55 @@ p, a {
 /* Tablet media queries */
 
 @media only screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    margin-top: 1%;
+  }
+
+  .navbar a {
+    flex-direction: column;
+    color: #fff;
+  }
+
+  .left-nav {
+    flex-direction: column;
+    margin-right: auto;
+  }
+
+  .right-nav {
+    margin-left: 0;
+    display: none;
+  }
+
+  .nav-toggle {
+    color: #fff;
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .nav-toggle-show {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+  }
+
+  .nav-toggle-show a {
+    text-align: right;
+  }
 }
 
 /* Phone media queries */
 @media only screen and (max-width: 576px) {
+  #home-posts {
+    flex-direction: column;
+    align-items: center;
+    }
+
+  .post-box {
+    width: 80%;
+    height: auto;
+    padding: 5%;
+}
 }

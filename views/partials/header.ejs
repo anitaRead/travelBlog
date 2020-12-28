@@ -10,7 +10,7 @@
   <!-- Font awesome -->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
-  
+
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
@@ -20,18 +20,32 @@
 </head>
 
 <body>
+    <section class="navbar">
+      <div class="left-nav">
+        <a href="/" class="nav-brand">AR</a>
+      </div>
 
-  <section class="navbar">
-    <nav class="leftnav">
-      <a href="/">AR</a>
-    </nav>
-    <nav class="rightnav">
-      <a href="/about" class="rightnav">About</a>
-      <a href="/" class="rightnav">Posts</a>
-      <a href="/contact" class="rightnav">Contact</a>
-    </nav>
-  </section>
-  </body>
+      <div class="nav-toggle">
+        <i class="fas fa-bars fa-2x"></i>
+      </div>
 
- 
 
+      <nav class="right-nav" id="dropdown">
+        <a href="/about" class="nav-link">About</a>
+        <a href="/" class="nav-link">Posts</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+
+    </section>
+
+    <script>
+      function navToggle() {
+        const navs = document.querySelectorAll('.right-nav');
+
+        navs.forEach(nav => nav.classList.toggle('nav-toggle-show'));
+      }
+
+      document.querySelector('.nav-toggle')
+        .addEventListener('click', navToggle);</script>
+
+</body>
