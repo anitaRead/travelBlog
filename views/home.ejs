@@ -11,9 +11,9 @@
 
     <div id="home-posts">
         <% posts.forEach(function(post){ %>
-            <a href="/posts/<%=post._id%>"></a>
+            <a href="/posts/<%= post.title %>">
                 <div class="post-box">
-                    <a href="/posts/<%=post._id%>">
+                    <a href="/posts/<%= post.title %>">
                     <h1 class="post-title">
                         <%= post.title %>
                     </h1>

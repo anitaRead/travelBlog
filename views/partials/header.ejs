@@ -3,8 +3,14 @@
 
 <head>
   <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  
   <title>Joined at the trip</title>
-  <meta charset="utf-8">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../images/favicon-travel.png">
+
+  <!-- CSS stylesheet -->
   <link rel="stylesheet" href="/css/styles.css">
 
   <!-- Font awesome -->
@@ -16,13 +22,15 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500;600;700&family=Montserrat:wght@100;200;300;400;500;600&display=swap"
     rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
     <section class="navbar">
       <div class="left-nav">
-        <a href="/" class="nav-brand">AR</a>
+        <a href="/" class="nav-brand"><img src="../images/favicon-travel.png" alt="favicon"/></a>
       </div>
 
       <div class="nav-toggle">
@@ -30,7 +38,7 @@
       </div>
 
 
-      <nav class="right-nav" id="dropdown">
+      <nav class="right-nav">
         <a href="/about" class="nav-link">About</a>
         <a href="/" class="nav-link">Posts</a>
         <a href="/contact" class="nav-link">Contact</a>
@@ -46,6 +54,7 @@
       }
 
       document.querySelector('.nav-toggle')
-        .addEventListener('click', navToggle);</script>
+        .addEventListener('click', navToggle);
+      </script>
 
 </body>
