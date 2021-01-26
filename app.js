@@ -4,24 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const fs = require("fs");
-const path = require("path");
-// require("dotenv").config();
-
-// const multer = require("multer");
 const app = express();
-
-// const storage = multer.diskStorage({
-//   destination: "public/uploads/",
-//   filename: (req, file, cb) => {
-//     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-//   }
-// });
-
-// const upload = multer ({
-//    storage: storage 
-//   }).single('image');
-
 
 
 const aboutContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
@@ -39,10 +22,7 @@ mongoose.connect("mongodb+srv://a-read1:test123@cluster0.1wro8.mongodb.net/blogD
 const postSchema = {
   title: String,
   content: String,
-  // img: {
-  //   data: Buffer,
-  //   contentType: String
-  // }
+
 };
 
 const Post = mongoose.model("Post", postSchema);
@@ -51,12 +31,6 @@ const Post = mongoose.model("Post", postSchema);
 app.get("/", (req, res) => {
 
   Post.find({}, (err, posts) => {
-
-    // if (err) {
-
-    //   console.log(err);
-
-    // } else {
 
       res.render("home", {
         posts: posts
@@ -81,14 +55,10 @@ app.post("/compose", (req, res) => {
   const post = new Post({
     title: req.body.postTitle,
     content: req.body.postBody
-    // img: res.json({ fileUrl: "public/uploads/" + req.body.image })
-    // img: {
-    //   data: fs.readFileSync(path.join(`${__dirname}public/uploads/${req.file.filename}`)),
-    //   contentType: "image/png"
-    // }
+   
   });
 
-  post.save(post, (err) => { //no post? anon function
+  post.save(post, (err) => { 
 
     if (!err) {
 
