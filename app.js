@@ -35,8 +35,7 @@ app.get("/", (req, res) => {
       res.render("home", {
         posts: posts
       });
-
-    
+ 
 
   });
 
@@ -48,24 +47,20 @@ app.get("/compose", (req, res) => {
 
 app.post("/compose", (req, res) => {
 
-  upload(req, res, (err) => {
-    console.log(req.file);
-  })
-
   const post = new Post({
     title: req.body.postTitle,
     content: req.body.postBody
    
   });
 
-  post.save(post, (err) => { 
+  post.save((err) => {
 
-    if (!err) {
+      if (!err) {
 
-      res.redirect("/");
-    }
+        res.redirect("/");
+      }
 
-  });
+    });
 
 });
 
